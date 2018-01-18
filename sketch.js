@@ -8,6 +8,7 @@ function setup() {
   synth.connect(delay);
       
   createCanvas(800, 600);
+  background(255);
 
 }
 
@@ -36,8 +37,10 @@ function mouseClicked() {
     rel = ""+(600-mouseY)/1000;
     
     synth.triggerAttackRelease(note, rel);
+    fill(mouseY%255,255,200,150);
     ellipse(mouseX, mouseY, 80, 80);
-    fill(mouseY%255,255,200,100);
+    stroke(0,0,0,100);
+    fill(0,0,0);
     textSize(25);
 	text(note, mouseX+10, mouseY);
 
