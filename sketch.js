@@ -2,13 +2,19 @@
 var synth;
 var delay;
 
+var img;
+var brush;
+
 function setup() {
   synth = new Tone.MonoSynth();
   delay = new Tone.FeedbackDelay().toMaster();
   synth.connect(delay);
       
   createCanvas(800, 600);
-  background(255);
+  
+  img = loadImage("bg.jpg", function(img) {
+    image(img, 0, 0);
+  });
 
 }
 
